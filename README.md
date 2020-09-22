@@ -9,6 +9,7 @@
   + **configs**: chứa file .config mô tả cấu trúc của detection model
 - **models** (trong quá trình chạy run_on_colab.ipynb): là repo của Tensorflow Object Detection API dùng cho detection model
 - **inference_graph** (trong quá trình chạy run_on_colab.ipynb): chứa detection model đã được train
+- **run_on_colab.ipynb**: file chạy demo model
 
 # **Thông tin về DeepFashion Dataset**
 Link dataset https://github.com/brandontrabucco/deepfashion_dataset
@@ -27,6 +28,15 @@ Gồm 2 model
 - **Detection Model** sử dụng **Faster RCNN ResNet** pre-trained trên dataset COCO và được train lại trên DeepFashion dataset
 - **Search Model** sử dụng **ResNet-based Autoencoder** tạo embedding và **Cosine Similarity** để so sánh sự tương đồng
 
-# Cách hoạt động
+# **Cách hoạt động**
 - Ảnh input ban đầu sẽ được Detection Model xác định ra sản phẩm quần/áo chưa trong ảnh, vẽ bounding box và đưa phần ảnh chứa quần/áo đó qua search model
 - Search Model sau đó sẽ tạo embedding và tìm trong kho ảnh các sản phẩm có embedding có khoảng cách gần với ảnh input
+
+# **Cách chạy demo trên Google Colab**
+- Mở file **run_on_colab.ipynb** trên Google Colab
+- Download file **inference_graph.zip** và **img.zip** lần lượt chứa Detection Model và tập con dataset
+- Upload 2 file .zip bên trên vào thư mục của colab đang chạy file **run_on_colab.ipynb**
+- Trong file **run_on_colab.ipynb**, chọn *Runtime -> Run All*
+
+# **Một số kết quả**
+
